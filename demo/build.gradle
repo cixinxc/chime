@@ -1,7 +1,9 @@
-description = 'client'
+description = 'demo'
 
 dependencies {
     api(project(':common'))
+    api(project(':client'))
+    api(project(':server'))
 
     api(rootProject.ext.dependencies["netty-all"])
 

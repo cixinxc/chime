@@ -1,0 +1,5 @@
+description = 'client'
+
+dependencies {
+    api project(':common')
+}

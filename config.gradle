@@ -1,0 +1,22 @@
+ext {
+    app = [
+            "group"   : "cn.cixinxc.chime",
+            "version" : "0.0.1",
+            "JDK"     : "17",
+            "encoding": "UTF-8",
+    ]
+    dependencies = [
+            // test
+            "junit"               : "junit:junit:4.13.2",
+            // common
+            "gson"                : "com.google.code.gson:gson:2.10.1",
+            "commons-lang3"       : "org.apache.commons:commons-lang3:3.14.0",
+            "commons-collections4": "org.apache.commons:commons-collections4:4.4",
+            // netty
+            "netty-all"           : "io.netty:netty-all:4.1.104.Final",
+    ]
+
+    repositories = [
+            "ali-maven-center": "https://maven.aliyun.com/nexus/content/groups/public/",
+    ]
+}

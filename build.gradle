@@ -1,0 +1,33 @@
+apply from: "config.gradle"
+
+def vcsVersion = 'NO_VCS_VERSION'
+
+buildscript {
+    repositories {
+        maven { url "https://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+    }
+}
+
+allprojects {
+    project.ext.vcsRevision = vcsVersion
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+
+    group = rootProject.ext.app["group"]
+    version = rootProject.ext.app["version"]
+    sourceCompatibility = rootProject.ext.app["JDK"]
+    targetCompatibility = rootProject.ext.app["JDK"]
+
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url rootProject.ext.repositories["ali-maven-center"]
+        }
+    }
+}
